@@ -1,0 +1,13 @@
+name: taes
+
+channels:
+
+  - conda-forge
+  - defaults
+
+dependencies:
+  - ipykernel
+  - pandas
+  - numpy
+  - pingouin
+  - openpyxl
