@@ -15794,6 +15794,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>5
+
 </pre>
 </div>
 </div>
@@ -16922,7 +16923,6 @@ Name: id, dtype: int64, &#39;R&#39;: 31    40
 32    41
 34    43
 Name: id, dtype: int64}
-
 </pre>
 </div>
 </div>
@@ -17017,19 +17017,23 @@ Name: id, dtype: int64}
 </thead>
 <tbody>
 <tr>
-  <td>Maior que 4</td>
+  <td>Maior que 4,5</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>Entre 3,5 e 4,5</td>
   <td>3</td>
 </tr>
 <tr>
-  <td>Entre 3 e 4</td>
+  <td>Entre 2,5 e 3,5</td>
   <td>2</td>
 </tr>
 <tr>
-  <td>Entre 2 e 3</td>
+  <td>Entre 1,5 e 2,5</td>
   <td>1</td>
 </tr>
 <tr>
-  <td>Menor que 2</td>
+  <td>Entre 0 e 1,5</td>
   <td>0</td>
 </tr>
 </tbody>
@@ -17059,11 +17063,13 @@ Name: id, dtype: int64}
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">getQuantidadeDeTecnicas</span><span class="p">(</span><span class="n">media</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">media</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">media</span> <span class="o">&gt;=</span> <span class="mf">4.5</span><span class="p">)</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="mi">4</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">media</span> <span class="o">&lt;</span> <span class="mf">4.5</span> <span class="ow">and</span> <span class="n">media</span> <span class="o">&gt;=</span> <span class="mf">3.5</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">3</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">media</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">media</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">media</span> <span class="o">&lt;</span><span class="mf">3.5</span> <span class="ow">and</span> <span class="n">media</span> <span class="o">&gt;=</span><span class="mf">2.5</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">2</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">media</span> <span class="o">&lt;</span><span class="mi">3</span> <span class="ow">and</span> <span class="n">media</span> <span class="o">&gt;=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">media</span> <span class="o">&lt;</span><span class="mf">2.5</span> <span class="ow">and</span> <span class="n">media</span> <span class="o">&gt;=</span><span class="mf">1.5</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="mi">0</span>
 
@@ -17091,10 +17097,10 @@ Name: id, dtype: int64}
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>  Escala     Média  Quantidade de técnicas
 0      I  4.422222                       3
-1      P  3.900000                       2
-2      E  1.933333                       0
-3      T  1.533333                       0
-4      C  4.533333                       3
+1      P  3.900000                       3
+2      E  1.933333                       1
+3      T  1.533333                       1
+4      C  4.533333                       4
 5      V  4.100000                       3
 6      R  4.155556                       3
 </pre>
